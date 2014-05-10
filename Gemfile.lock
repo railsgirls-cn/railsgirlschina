@@ -7,7 +7,7 @@ GIT
       coffee-rails
 
 GEM
-  remote: https://rubygems.org/
+  remote: http://ruby.taobao.org/
   specs:
     actionmailer (4.1.0)
       actionpack (= 4.1.0)
@@ -40,18 +40,6 @@ GEM
     bootstrap-sass (3.1.0.1)
       sass (~> 3.2)
     builder (3.2.2)
-    capistrano (3.1.0)
-      i18n
-      rake (>= 10.0.0)
-      sshkit (~> 1.3)
-    capistrano-bundler (1.1.2)
-      capistrano (~> 3.0)
-      sshkit (~> 1.2)
-    capistrano-rails (1.0.0)
-      capistrano
-    capistrano-rvm (0.1.1)
-      capistrano (~> 3.0)
-      sshkit (~> 1.2)
     carrierwave (0.9.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -153,9 +141,6 @@ GEM
     mono_logger (1.1.0)
     multi_json (1.9.2)
     multipart-post (2.0.0)
-    net-scp (1.1.2)
-      net-ssh (>= 2.6.5)
-    net-ssh (2.8.0)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     pg (0.17.1)
@@ -230,10 +215,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    sshkit (1.3.0)
-      net-scp (>= 1.1.2)
-      net-ssh
-      term-ansicolor
     subexec (0.2.3)
     temple (0.6.7)
     term-ansicolor (1.3.0)
@@ -262,10 +243,6 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (~> 3.1.2)
   bootstrap-sass (~> 3.1.0)
-  capistrano (~> 3.1.0)
-  capistrano-bundler (~> 1.1.2)
-  capistrano-rails (~> 1.0.0)
-  capistrano-rvm (~> 0.1.1)
   carrierwave (~> 0.9.0)
   coffee-rails (~> 4.0.0)
   elasticsearch-model (~> 0.1.0)

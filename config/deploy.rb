@@ -2,8 +2,8 @@
 lock '3.1.0'
 
 set :application, 'campo'
-set :repo_url, 'git@github.com:chloerei/campo.git'
-set :deploy_to, -> { "/var/www/#{fetch(:application)}" }
+set :repo_url, 'git@github.com:railsgirls-cn/campo.git'
+set :deploy_to, -> { "/home/ruby/#{fetch(:application)}" }
 set :rails_env, 'production'
 
 set :linked_files, %w{config/database.yml config/config.yml config/secrets.yml}

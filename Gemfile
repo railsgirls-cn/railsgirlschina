@@ -1,4 +1,8 @@
-source 'https://rubygems.org'
+if ENV['RUBYTAOBAO']
+  source 'http://ruby.taobao.org'
+else
+  source 'https://rubygems.org'
+end
 
 gem 'rails', '4.1.0'
 
@@ -90,11 +94,6 @@ group :development do
   # i18n extractor
   gem 'i18n-tasks', '~> 0.3.2'
 
-  # Deploy tool
-  gem 'capistrano', '~> 3.1.0'
-  gem 'capistrano-rvm', '~> 0.1.1'
-  gem 'capistrano-bundler', '~> 1.1.2'
-  gem 'capistrano-rails', '~> 1.0.0'
 end
 
 group :development, :test do
