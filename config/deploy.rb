@@ -12,15 +12,16 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 namespace :deploy do
   desc "Restart unicorn and resque"
   task :restart do
-    invoke 'deploy:passenger:restart'
+    invoke 'unicorn:restart'
     invoke 'deploy:resque:restart'
   end
   after :publishing, :restart
 
-  namespace :passenger do
+  namespace :unicorn do
+    desc "restart unicorn"
     task :restart do
       on roles(:app) do
-        execute :touch, "#{release_path}/tmp/restart.txt"
+        run "cd #{current_path} && unicorn -c config/unicorn/production.rb -E production -D"
       end
     end
   end
