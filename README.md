@@ -1,11 +1,7 @@
-# This is <http://railsgirlschina.com> 's SourceCode.
+# RailsGirlsChina
 
-Campo is a lightweight forum application, base on Ruby on Rails.
+This is <http://railsgirlschina.com> 's SourceCode.
 
-It's good for:
-
-- Build user forum for your website.
-- As code base, customize develop for your business.
 
 ## Build with
 
