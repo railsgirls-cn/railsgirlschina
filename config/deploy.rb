@@ -14,6 +14,7 @@ set :domain, 'yafeilee.me'
 set :deploy_to, '/home/ruby/campo'
 set :repository, 'git@github.com:railsgirls-cn/campo.git'
 set :branch, ENV['BRANCH'] || 'master'
+set :app_path, "#{deploy_to}/#{current_path}"
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
@@ -55,6 +56,9 @@ task :deploy => :environment do
 
     to :launch do
       invoke :'unicorn:restart'
+      queue! %{
+        service resque restart
+      }
     end
   end
 end
@@ -62,7 +66,7 @@ end
 namespace :unicorn do
   set :unicorn_pid, "#{app_path}/tmp/pids/unicorn_campo.pid"
   set :start_unicorn, %{
-    cd #{app_path} && unicorn -c config/unicorn/#{rails_env}.rb -E #{rails_env} -D
+    cd #{app_path} && bundle exec unicorn -c config/unicorn/#{rails_env}.rb -E #{rails_env} -D
   }
   desc "Start unicorn"
   task :start => :environment do
