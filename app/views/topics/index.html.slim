@@ -50,9 +50,9 @@
           .panel-body
             ul.nav.nav-pills.nav-stacked
               li class=('active' unless @category)
-                a href=topics_path
+                a.category href=topics_path
                   = t '.all_categories'
               - Category.order(topics_count: :desc).each do |category|
                 li class=('active' if category == @category)
-                  a href=categoried_topics_path(category_id: category.slug)
+                  a.category href=categoried_topics_path(category_id: category.slug)
                     = category.name

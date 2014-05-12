@@ -163,7 +163,7 @@ body {
           background: transparent;
           color: $gray-dark;
           padding-bottom: 8px;
-          border-bottom: 2px solid $link-color;
+          border-bottom: 2px solid $border-color;
         }
       }
 
@@ -171,7 +171,7 @@ body {
         a {
           color: $gray-dark;
           padding-bottom: 8px;
-          border-bottom: 2px solid $link-color;
+          border-bottom: 2px solid $border-color;
         }
       }
     }
@@ -202,6 +202,17 @@ body {
 
     .nav li a {
       padding: $padding-base-vertical $padding-base-horizontal;
+      border-radius: 0;
+      background-color: white;
+      color: #333;
+
+      &:hover {
+        border-bottom: 2px solid $border-color;
+      }
+    }
+
+    .nav li.active a {
+      border-bottom: 2px solid $border-color;
     }
 
     .breadcrumb {
@@ -228,6 +239,21 @@ body {
     .list-group-item {
       padding: 15px;
     }
+
+    .nav li.active a {
+      background-color: white;
+      color: #333;
+      border: none;
+      border-bottom: 2px solid $border-color;
+      border-radius: 0;
+    }
+
+    .nav li.active a.category {
+      border: none;
+      border-right: 2px solid $border-color;
+    }
+
+
   }
 
   .panel-body + .panel-body {
@@ -248,9 +274,25 @@ body {
     border: none;
     border-bottom: 1px solid #eee;
     margin-bottom: 0;
+    border-radius: 0;
+    background-color: white;
+
+    &:hover {
+      background-color: white;
+    }
 
     &:last-child {
       border-bottom: none;
+    }
+  }
+
+  .list-group-item.active {
+    background-color: white !important;
+    border: none;
+    color: $primary-color;
+
+    &:hover {
+      color: $primary-color !important;
     }
   }
 
