@@ -5,6 +5,7 @@ set :application, 'campo'
 set :repo_url, 'git@github.com:railsgirls-cn/campo.git'
 set :deploy_to, -> { "/home/ruby/#{fetch(:application)}" }
 set :rails_env, 'production'
+set :branch, ENV['BRANCH'] || "master"
 
 set :linked_files, %w{config/database.yml config/config.yml config/secrets.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/uploads}
