@@ -86,6 +86,7 @@ gem 'resque_mailer', '~> 2.2.6'
 group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/jonleighton/spring
   gem 'spring'
+  gem 'quiet_assets'
 
   # Livereload
   gem 'guard-livereload', require: false
