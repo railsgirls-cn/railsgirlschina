@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   has_many :like_comments, through: :likes, source: :likeable, source_type: 'Comment'
 
   has_many :attachments, dependent: :delete_all
+  has_one :city
 
   validates :username, uniqueness: { case_sensitive: false }, presence: true, format: { with: /\A[a-z0-9][a-z0-9-]*\z/i }
   validates :name, presence: true
