@@ -448,3 +448,29 @@ article {
   display: table-cell;
   vertical-align: middle;
 }
+
+.nav > li > a {
+  color: #666;
+  border: none;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+  color: #333;
+}
+
+.dropdown-menu > li > a {
+  border: none;
+}
+
+.list-group-item.comment .list-group-item-heading a {
+  border: none;
+}
+
+a {
+  color: $brand-primary;
+  border-bottom: 1px dotted $brand-primary;
+}
+
+a:hover, a:focus {
+  color: $brand-primary;
+  text-decoration: none;
+}
