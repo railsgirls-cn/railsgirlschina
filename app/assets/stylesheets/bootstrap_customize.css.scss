@@ -460,6 +460,11 @@ article {
 .dropdown-menu > li > a {
   border: none;
 }
+.navbar .navbar-nav .dropdown >a {
+  &:hover, &:focus {
+    color: white;
+  }
+}
 
 .list-group-item.comment .list-group-item-heading a {
   border: none;
