@@ -240,6 +240,10 @@ body {
       padding: 15px;
     }
 
+    .list-group-item > a {
+      border-bottom: none;
+    }
+
     .nav li.active a {
       background-color: white;
       color: #333;
