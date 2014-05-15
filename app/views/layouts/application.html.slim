@@ -8,6 +8,7 @@ html
     - if I18n.locale != 'en'
       = javascript_include_tag "locales/#{I18n.locale}"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
+    link href=asset_path('favicon.png') type='image/png' rel="icon"
     = csrf_meta_tags
     - if login?
       javascript:

@@ -3,11 +3,11 @@ require 'mina/rails'
 require 'mina/git'
 require 'mina/rvm'    # for rvm support. (http://rvm.io)
 
-# Basic settings:
-#   domain       - The hostname to SSH to.
-#   deploy_to    - Path to deploy into.
-#   repository   - Git repo to clone from. (needed by mina/git)
-#   branch       - Branch name to deploy. (needed by mina/git)
+set :application, 'campo'
+set :repo_url, 'git@github.com:railsgirls-cn/campo.git'
+set :deploy_to, -> { "/home/ruby/#{fetch(:application)}" }
+set :rails_env, 'production'
+set :branch, ENV['BRANCH'] || "master"
 
 set :user, 'ruby'
 set :domain, 'yafeilee.me'

@@ -1,40 +1,45 @@
+$nav-title-color: #f1f1f1;
+$navbar-background-color: #D3360B;
+$primary-color: #e0330c;
+$border-color: #d3360b;
 body {
   background: #eee;
 }
 
 .navbar {
-  background: white;
+  background: $navbar-background-color;
   border-bottom: none;
   margin-bottom: 0;
 
   &.navbar-inverse {
-    background: #222;
+    background: $navbar-background-color;
 
     .navbar-brand {
-      color: $gray-lighter;
+      color: $nav-title-color;
     }
 
     .navbar-nav > li {
       > a {
-        color: $gray-light;
+        color: $nav-title-color;
 
         &:hover {
-          color: $gray-lighter;
-          background: #090909;
+          color: $nav-title-color;
+          background: $navbar-background-color;
+          text-decoration: underline;
         }
       }
 
       &.active {
         > a {
-          color: $gray-lighter;
-          background: #090909;
+          color: $nav-title-color;
+          background: $navbar-background-color;
         }
       }
     }
   }
 
   .navbar-brand {
-    color: $gray-dark;
+    color: $nav-title-color;
     line-height: 50px;
     padding: 0 15px;
 
@@ -45,20 +50,22 @@ body {
 
   .navbar-nav > li {
     > a {
-      color: $gray-light;
+      color: $nav-title-color;
       padding: 0 15px;
       line-height: 50px;
+      background-color: $navbar-background-color;
 
       &:hover {
-        color: $gray-dark;
-        background: #f9f9f9;
+        color: $nav-title-color;
+        background-color: $navbar-background-color;
+        text-decoration: underline;
       }
     }
 
     &.active {
       > a {
-        color: $gray-dark;
-        background: #f9f9f9;
+        color: $nav-title-color;
+        background-color: $navbar-background-color;
       }
     }
   }
@@ -77,8 +84,8 @@ body {
     }
 
     .open .dropdown-toggle {
-      color: $gray-dark;
-      background: #f9f9f9;
+      color: $nav-title-color;
+      background: $navbar-background-color;
     }
 
     .item-user {
@@ -156,7 +163,7 @@ body {
           background: transparent;
           color: $gray-dark;
           padding-bottom: 8px;
-          border-bottom: 2px solid $link-color;
+          border-bottom: 2px solid $border-color;
         }
       }
 
@@ -164,7 +171,7 @@ body {
         a {
           color: $gray-dark;
           padding-bottom: 8px;
-          border-bottom: 2px solid $link-color;
+          border-bottom: 2px solid $border-color;
         }
       }
     }
@@ -195,6 +202,17 @@ body {
 
     .nav li a {
       padding: $padding-base-vertical $padding-base-horizontal;
+      border-radius: 0;
+      background-color: white;
+      color: #333;
+
+      &:hover {
+        border-bottom: 2px solid $border-color;
+      }
+    }
+
+    .nav li.active a {
+      border-bottom: 2px solid $border-color;
     }
 
     .breadcrumb {
@@ -221,6 +239,25 @@ body {
     .list-group-item {
       padding: 15px;
     }
+
+    .list-group-item > a {
+      border-bottom: none;
+    }
+
+    .nav li.active a {
+      background-color: white;
+      color: #333;
+      border: none;
+      border-bottom: 2px solid $border-color;
+      border-radius: 0;
+    }
+
+    .nav li.active a.category {
+      border: none;
+      border-right: 2px solid $border-color;
+    }
+
+
   }
 
   .panel-body + .panel-body {
@@ -241,9 +278,25 @@ body {
     border: none;
     border-bottom: 1px solid #eee;
     margin-bottom: 0;
+    border-radius: 0;
+    background-color: white;
+
+    &:hover {
+      background-color: white;
+    }
 
     &:last-child {
       border-bottom: none;
+    }
+  }
+
+  .list-group-item.active {
+    background-color: white !important;
+    border: none;
+    color: $primary-color;
+
+    &:hover {
+      color: $primary-color !important;
     }
   }
 
@@ -398,4 +451,35 @@ article {
 .middle-block-inner {
   display: table-cell;
   vertical-align: middle;
+}
+
+.nav > li > a {
+  color: #666;
+  border: none;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+  color: #333;
+}
+
+.dropdown-menu > li > a {
+  border: none;
+}
+.navbar .navbar-nav .dropdown >a {
+  &:hover, &:focus {
+    color: white;
+  }
+}
+
+.list-group-item.comment .list-group-item-heading a {
+  border: none;
+}
+
+a {
+  color: $brand-primary;
+  border-bottom: 1px dotted $brand-primary;
+}
+
+a:hover, a:focus {
+  color: $brand-primary;
+  text-decoration: none;
 }
