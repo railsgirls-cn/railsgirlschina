@@ -4,7 +4,7 @@ require 'mina/git'
 require 'mina/rvm'    # for rvm support. (http://rvm.io)
 
 set :application, 'campo'
-set :repo_url, 'git@github.com:railsgirls-cn/campo.git'
+set :repo_url, 'git@github.com:railsgirls-cn/railsgirlschina.git'
 set :deploy_to, -> { "/home/ruby/#{fetch(:application)}" }
 set :rails_env, 'production'
 set :branch, ENV['BRANCH'] || "master"
