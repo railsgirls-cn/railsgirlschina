@@ -41,7 +41,8 @@ gem 'jbuilder', '~> 1.2'
 #gem 'sdoc',             group: :doc, require: false
 
 # Slim template
-gem 'slim', '~> 2.0.2'
+#gem 'slim', '~> 2.0.2'
+gem 'slim-rails'
 
 # Markdown
 gem 'redcarpet', '~> 3.0.0'
