@@ -1,2 +1,34 @@
-h1 Home#index
-p Find me in app/views/home/index.html.slim
+.index
+  .jumbotron.introduce
+    .container
+      .row
+        .col-xs-12.col-sm-5.col-md-4
+          .image
+            = image_tag 'rg-index.png'
+        .col-xs-12.col-sm-7.col-md-8
+          h1 Hello, RailsGirlsChina!
+          p.detail-instroduce 这是 RailsGirlsChina 社区, 旨为女性提供工具和社区支持, 帮助你们进入IT界以及有能力实现自己的idea和人生理想.
+          p
+            em RailsGirls
+            | 是一个全球公益的组织.
+  .resources
+    .container
+        .col-xs-12.col-sm-7.col-md-8
+          .resource
+            ul.list-unstyled
+              li
+                p 这里聚集了全国最为优秀的 <em>Ruby on Rails</em> 教练.
+              li
+                p 在教育, 金融, 甚至医疗等行业优秀的学员.
+              li
+                p 自由的讨论社区, 行业碰撞的点子.
+        .col-xs-12.col-sm-5.col-md-4
+          .image
+            = image_tag 'rg-index-2.jpg'
+  .quickjoin
+    .container
+      h1
+        - if current_user
+          = link_to '立即进入', topics_path
+        - else
+          = link_to '立即加入', signup_path
