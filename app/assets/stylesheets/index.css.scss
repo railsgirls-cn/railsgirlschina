@@ -1,0 +1,46 @@
+.index {
+  background-color: #fff;
+
+  h1, h2, h3, h4 {
+    color: #D3360B;
+  }
+
+  em {
+    color: #D3360B;
+    font-style: normal;
+  }
+
+  .introduce {
+    padding-top: 10rem;
+    background-color: #fff;
+
+    .detail-instroduce {
+      margin-top: 2rem;
+    }
+  }
+
+  .resources {
+    border-top: 1px solid #eee;
+    padding-top: 5rem;
+
+    .image {
+      text-align: right;
+    }
+
+    p {
+      margin-bottom: 15px;
+      font-size: 23px;
+      font-weight: 200;
+    }
+    .resource {
+      text-align: right;
+    }
+  }
+  
+  .quickjoin {
+    margin-top: 5rem;
+    border-top: 1px solid #eee;
+    padding: 5rem 0 10rem 0;
+    text-align: center;
+  }
+}
