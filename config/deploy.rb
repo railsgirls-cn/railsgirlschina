@@ -3,22 +3,17 @@ require 'mina/rails'
 require 'mina/git'
 require 'mina/rvm'    # for rvm support. (http://rvm.io)
 
-set :application, 'campo'
-set :repo_url, 'git@github.com:railsgirls-cn/railsgirlschina.git'
-set :deploy_to, -> { "/home/ruby/#{fetch(:application)}" }
-set :rails_env, 'production'
-set :branch, ENV['BRANCH'] || "master"
-
 set :user, 'ruby'
 set :domain, 'yafeilee.me'
 set :deploy_to, '/home/ruby/campo'
-set :repository, 'git@github.com:railsgirls-cn/campo.git'
+set :repository, 'git@github.com:railsgirls-cn/railsgirlschina.git'
 set :branch, ENV['BRANCH'] || 'master'
+set :rails_env, 'production'
 set :app_path, "#{deploy_to}/#{current_path}"
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
-set :shared_paths, %w(config/database.yml config/config.yml config/secrets.yml bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/uploads)
+set :shared_paths, %w(config/database.yml config/config.yml config/secrets.yml bin log tmp/pids tmp/cache tmp/sockets public/uploads)
 
 # This task is the environment that is loaded for most commands, such as
 # `mina deploy` or `mina rake`.
