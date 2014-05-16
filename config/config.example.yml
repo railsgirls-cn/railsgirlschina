@@ -1,6 +1,8 @@
 default: &default
   title: Campo
   host: localhost:3000
+  GA_ID:
+  GA_URL:
 
   mailer:
     # For localhost postfix
