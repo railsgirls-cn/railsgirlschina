@@ -24,6 +24,16 @@
 .user-profile {
   background: white;
   text-align: center;
+  color: #666;
+
+  .r {
+    color: #aaa;
+    font-size: 80%;
+  }
+  .line {
+    border-top: 1px solid #eee;
+    padding: 1rem 0;
+  }
 }
 
 .user-profile-avatar {
