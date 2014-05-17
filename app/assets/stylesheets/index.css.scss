@@ -1,8 +1,18 @@
 .index {
   background-color: #fff;
 
+  @media (max-width: $screen-xs-max) {
+    h1 {
+      font-size: 35px;
+    }
+  }
+
   h1, h2, h3, h4 {
     color: #D3360B;
+  }
+
+  img {
+    width: 100%;
   }
 
   em {

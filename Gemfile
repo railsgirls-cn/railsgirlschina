@@ -29,7 +29,7 @@ gem 'jquery-rails'
 gem 'turbolinks', github: 'chloerei/turbolinks', branch: 'reset-scroll-position'
 
 # Bootstrap
-gem 'bootstrap-sass', '~> 3.1.0'
+gem 'bootstrap-sass', '~> 3.1.1.1'
 
 # Font Awesome
 gem 'font-awesome-sass', '~> 4.0.2'

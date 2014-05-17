@@ -1,5 +1,8 @@
 #user-confirm-required {
-  padding: $line-height-computed 0 0;
+  .container {
+    margin-top: $line-height-computed ;
+    margin-bottom: $line-height-computed ;
+  }
 
   .alert {
     margin: 0;
