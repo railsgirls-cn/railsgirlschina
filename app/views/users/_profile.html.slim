@@ -6,7 +6,17 @@
       = user.name
       '
       span.text-muted = "@#{user.username}"
-    .user-profile-bio
+    .user-profile-city.line
+      .r
+        | 城市
+      = user.city.try(:name) || '未填写'
+    .user-profile-roles.line
+      .r
+        | 角色
+      = user.roles.collect(&:name).join(' , ').presence || "未填写"
+    .user-profile-bio.line
+      .r
+        | 个人简述
       = simple_format user.bio
 
   - if login? and user == current_user
