@@ -15,7 +15,7 @@ class Settings::ProfilesController < Settings::ApplicationController
       end
       @user.save!
 
-      flash.now[:success] = I18n.t('settings.profiles.flashes.successfully_updated')
+      flash[:success] = I18n.t('settings.profiles.flashes.successfully_updated')
       redirect_to settings_profile_url
     else
       render :show
