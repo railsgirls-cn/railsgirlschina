@@ -96,6 +96,38 @@ ALTER SEQUENCE categories_id_seq OWNED BY categories.id;
 
 
 --
+-- Name: cities; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE cities (
+    id integer NOT NULL,
+    name character varying(255),
+    description text,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: cities_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE cities_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: cities_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE cities_id_seq OWNED BY cities.id;
+
+
+--
 -- Name: comments; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -200,6 +232,68 @@ ALTER SEQUENCE notifications_id_seq OWNED BY notifications.id;
 
 
 --
+-- Name: roles; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE roles (
+    id integer NOT NULL,
+    name character varying(255),
+    description text,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: roles_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE roles_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: roles_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE roles_id_seq OWNED BY roles.id;
+
+
+--
+-- Name: roles_users; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE roles_users (
+    id integer NOT NULL,
+    user_id integer,
+    role_id integer
+);
+
+
+--
+-- Name: roles_users_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE roles_users_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: roles_users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE roles_users_id_seq OWNED BY roles_users.id;
+
+
+--
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -301,7 +395,8 @@ CREATE TABLE users (
     send_comment_email boolean DEFAULT true,
     send_comment_web boolean DEFAULT true,
     send_mention_email boolean DEFAULT true,
-    send_mention_web boolean DEFAULT true
+    send_mention_web boolean DEFAULT true,
+    city_id integer
 );
 
 
@@ -342,6 +437,13 @@ ALTER TABLE ONLY categories ALTER COLUMN id SET DEFAULT nextval('categories_id_s
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY cities ALTER COLUMN id SET DEFAULT nextval('cities_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY comments ALTER COLUMN id SET DEFAULT nextval('comments_id_seq'::regclass);
 
 
@@ -357,6 +459,20 @@ ALTER TABLE ONLY likes ALTER COLUMN id SET DEFAULT nextval('likes_id_seq'::regcl
 --
 
 ALTER TABLE ONLY notifications ALTER COLUMN id SET DEFAULT nextval('notifications_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY roles ALTER COLUMN id SET DEFAULT nextval('roles_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY roles_users ALTER COLUMN id SET DEFAULT nextval('roles_users_id_seq'::regclass);
 
 
 --
@@ -397,6 +513,14 @@ ALTER TABLE ONLY categories
 
 
 --
+-- Name: cities_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY cities
+    ADD CONSTRAINT cities_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: comments_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -418,6 +542,22 @@ ALTER TABLE ONLY likes
 
 ALTER TABLE ONLY notifications
     ADD CONSTRAINT notifications_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: roles_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY roles
+    ADD CONSTRAINT roles_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: roles_users_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY roles_users
+    ADD CONSTRAINT roles_users_pkey PRIMARY KEY (id);
 
 
 --
@@ -585,4 +725,12 @@ INSERT INTO schema_migrations (version) VALUES ('20140405074043');
 INSERT INTO schema_migrations (version) VALUES ('20140412065000');
 
 INSERT INTO schema_migrations (version) VALUES ('20140412113810');
+
+INSERT INTO schema_migrations (version) VALUES ('20140512130521');
+
+INSERT INTO schema_migrations (version) VALUES ('20140512130644');
+
+INSERT INTO schema_migrations (version) VALUES ('20140517121403');
+
+INSERT INTO schema_migrations (version) VALUES ('20140517121702');
 

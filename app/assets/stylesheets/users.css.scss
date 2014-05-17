@@ -1,3 +1,11 @@
+.notice {
+  margin-top: $line-height-computed ;
+  margin-bottom: $line-height-computed ;
+  .alert {
+    margin-bottom: 0;
+  }
+}
+
 #user-confirm-required {
   .container {
     margin-top: $line-height-computed ;
@@ -44,5 +52,19 @@
 
   .uploader {
     margin-left: 110px;
+  }
+}
+
+.cities {
+  margin: 10.5px 0;
+}
+
+.roles {
+  input[type=checkbox] {
+    margin-right: 0.5rem;
+  }
+  label {
+    font-weight: 400;
+    margin-right: 1rem;
   }
 }

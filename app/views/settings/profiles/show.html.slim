@@ -1,5 +1,9 @@
 - @page_title = t '.profile_settings'
 
+- if flash[:notice].present?
+  .container.notice
+    .alert.alert-success
+      p #{flash[:notice]}
 .main
   .container
     .row
@@ -31,12 +35,26 @@
                 .col-sm-6
                   = f.text_field :name, class: 'form-control', tabIndex: 3
               .form-group
+                = f.label :city, class: 'control-label col-sm-3'
+                .col-sm-6
+                  = f.text_field :city, value: @user.city.try(:name), class: 'form-control', tabIndex: 4
+                  p.cities
+                    | #{t('already_have_cities')}
+                    | #{City.all.collect(&:name).join(' , ')}
+              .form-group
+                = f.label :role, class: 'control-label col-sm-3'
+                .col-sm-6.roles
+                  - Role.all.each do |role|
+                    = f.check_box :roles, { multiple: true, checked: @user.has_role?(role) }, role.id, false
+                    = label_tag "user_roles_#{role.id}", role.name
+                    
+              .form-group
                 = f.label :bio, class: 'control-label col-sm-3'
                 .col-sm-6
-                  = f.text_area :bio, class: 'form-control', tabIndex: 4
+                  = f.text_area :bio, class: 'form-control', tabIndex: 5
               .form-group
                 .col-sm-6.col-sm-push-3
-                  = f.submit t('.save_changes'), class: 'btn btn-primary', tabIndex: 5
+                  = f.submit t('.save_changes'), class: 'btn btn-primary', tabIndex: 6
 
 javascript:
   $('form.user-form').validate({
