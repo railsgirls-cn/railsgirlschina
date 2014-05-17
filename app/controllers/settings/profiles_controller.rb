@@ -9,6 +9,12 @@ class Settings::ProfilesController < Settings::ApplicationController
         @user.city = city
         @user.save!
       end
+
+      @user.roles = params[:user][:roles].collect do |role_id|
+        role = Role.find(role_id)
+      end
+      @user.save!
+
       flash[:success] = I18n.t('settings.profiles.flashes.successfully_updated')
       redirect_to settings_profile_url
     else

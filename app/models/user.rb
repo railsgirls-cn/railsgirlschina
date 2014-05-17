@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
 
   has_many :attachments, dependent: :delete_all
   belongs_to :city
+  has_and_belongs_to_many :roles
 
   validates :username, uniqueness: { case_sensitive: false }, presence: true, format: { with: /\A[a-z0-9][a-z0-9-]*\z/i }
   validates :name, presence: true
@@ -78,5 +79,9 @@ class User < ActiveRecord::Base
     User.find_by(id: user_id) if timestamp > 1.hour.ago
   rescue ActiveSupport::MessageVerifier::InvalidSignature
     nil
+  end
+
+  def has_role?(role)
+    self.roles.include?(role)
   end
 end

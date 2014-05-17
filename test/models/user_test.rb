@@ -33,4 +33,15 @@ class UserTest < ActiveSupport::TestCase
     token = user.confirmation_token
     assert_equal user, User.find_by_confirmation_token(token)
   end
+
+  test "should has_roles" do
+    role = create(:role)
+    role2 = create(:role2)
+    user = create(:user)
+    user.roles << role
+    user.save!
+
+    assert user.has_role?(role)
+    assert ! user.has_role?(role2)
+  end
 end

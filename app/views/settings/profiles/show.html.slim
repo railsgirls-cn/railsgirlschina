@@ -37,6 +37,12 @@
                   p.cities
                     | 已有城市: 
                     | #{City.all.collect(&:name).join(' , ')}
+              .form-group
+                = f.label :role, class: 'control-label col-sm-3'
+                .col-sm-6.roles
+                  - Role.all.each do |role|
+                    = f.check_box :roles, { multiple: true, checked: @user.has_role?(role) }, role.id, false
+                    = label_tag "user_roles_#{role.id}", role.name
                     
               .form-group
                 = f.label :bio, class: 'control-label col-sm-3'
