@@ -22,6 +22,7 @@ zh-CN:
         email: Email
         locale: "语言"
         name: "全名"
+        city: "城市"
         password: "密码"
         password_confirmation: "密码确认"
         username: "用户名"
