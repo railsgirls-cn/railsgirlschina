@@ -76,12 +76,6 @@ body {
   }
 
   .navbar-right {
-    float: right;
-    margin-right: -15px;
-
-    > li {
-      float: left;
-    }
 
     .open .dropdown-toggle {
       color: $nav-title-color;
@@ -105,45 +99,20 @@ body {
     }
   }
 
-  .navbar-toggle {
-    display: none;
-  }
-
   @media (max-width: $grid-float-breakpoint) {
-    .navbar-header {
-      float: left;
-    }
 
     .navbar-nav {
-      margin: 0;
 
       .open .dropdown-menu {
-        position: absolute;
         border: 1px solid $dropdown-fallback-border; // IE8 fallback
         border: 1px solid $dropdown-border;
         background-color: $dropdown-bg;
         @include box-shadow(0 6px 12px rgba(0,0,0,.175));
+        margin-bottom: -7.25px;
       }
 
-      > li > a {
-        padding: 0 15px;
-      }
     }
 
-    .navbar-right {
-      margin-right: -15px;
-    }
-
-    .navbar-collapse {
-      border: none;
-      padding: 0;
-    }
-
-    .navbar-toggle {
-      display: block;
-      padding: 0;
-      margin: 0;
-    }
   }
 }
 
@@ -190,7 +159,7 @@ body {
 }
 
 .main {
-  padding: $line-height-computed 0;
+  margin: $line-height-computed 0;
 }
 
 .panel {
@@ -482,4 +451,13 @@ a {
 a:hover, a:focus {
   color: $brand-primary;
   text-decoration: none;
+}
+
+// for mobile toggle button
+button.navbar-toggle {
+  border-color: #FF7373;
+  border-radius: 2px;
+}
+.navbar-toggle .icon-bar {
+  background-color: #FF7373;
 }
