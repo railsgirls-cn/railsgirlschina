@@ -1,5 +1,9 @@
 - @page_title = t '.profile_settings'
 
+- if flash[:notice].present?
+  .container.notice
+    .alert.alert-success
+      p #{flash[:notice]}
 .main
   .container
     .row
@@ -35,7 +39,7 @@
                 .col-sm-6
                   = f.text_field :city, value: @user.city.try(:name), class: 'form-control', tabIndex: 4
                   p.cities
-                    | 已有城市: 
+                    | #{t('already_have_cities')}
                     | #{City.all.collect(&:name).join(' , ')}
               .form-group
                 = f.label :role, class: 'control-label col-sm-3'

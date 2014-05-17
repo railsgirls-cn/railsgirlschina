@@ -11,7 +11,8 @@ class UsersController < ApplicationController
     if @user.save
       login_as @user
       UserMailer.confirmation(@user.id).deliver
-      redirect_back_or_default root_url
+      flash[:notice] = t('notice_update_profile')
+      redirect_back_or_default settings_profile_path
     else
       render :new
     end

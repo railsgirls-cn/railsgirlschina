@@ -1,5 +1,7 @@
 ---
 zh-CN:
+  already_have_cities: '已有城市: '
+  notice_update_profile: '注册成功, 请添加头像, 城市, 与角色, 方便大家认识你'
   activerecord:
     attributes:
       category:
@@ -23,6 +25,7 @@ zh-CN:
         locale: "语言"
         name: "全名"
         city: "城市"
+        role: "角色"
         password: "密码"
         password_confirmation: "密码确认"
         username: "用户名"

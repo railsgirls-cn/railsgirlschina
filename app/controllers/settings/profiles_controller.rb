@@ -10,12 +10,12 @@ class Settings::ProfilesController < Settings::ApplicationController
         @user.save!
       end
 
-      @user.roles = params[:user][:roles].collect do |role_id|
+      @user.roles = params[:user][:roles].to_a.collect do |role_id|
         role = Role.find(role_id)
       end
       @user.save!
 
-      flash[:success] = I18n.t('settings.profiles.flashes.successfully_updated')
+      flash.now[:success] = I18n.t('settings.profiles.flashes.successfully_updated')
       redirect_to settings_profile_url
     else
       render :show

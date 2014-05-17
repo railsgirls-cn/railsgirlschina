@@ -1,5 +1,7 @@
 ---
 en:
+  already_have_cities: 'Already have cities: '
+  notice_update_profile: 'Please add more info, like avatar, city and roles'
   activerecord:
     attributes:
       category:
