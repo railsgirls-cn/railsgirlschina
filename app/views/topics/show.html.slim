@@ -29,6 +29,12 @@
                     article.comment-body
                       = markdown_format @topic.body
                     .list-group-item-actions.clearfix
+                      .pull-left
+                        .bshare-custom
+                          a.bshare-weixin
+                          a.bshare-sinaminiblog
+                          a.bshare-douban
+                          a.bshare-twitter
                       .pull-right
                         a.btn id="like-for-topic-#{@topic.id}" href=topic_like_path(@topic) data-remote="true" data-method="post"
                           i.fa.fa-heart
@@ -130,3 +136,6 @@
         }
       }
     });
+
+  script type='text/javascript' charset='utf-8' src='http://static.bshare.cn/b/buttonLite.js#uuid=b2b1739e-7807-4b34-9883-60da8c056f0d&style=-1'
+  script type='text/javascript' charset='utf-8' src='http://static.bshare.cn/b/bshareC2.js'
