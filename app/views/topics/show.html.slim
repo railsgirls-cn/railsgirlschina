@@ -116,6 +116,9 @@
                   .list-group-item.text-center.text-muted
                     = t '.no_more_topics'
 
+script type='text/javascript' charset='utf-8' src='http://static.bshare.cn/b/buttonLite.js#uuid=b2b1739e-7807-4b34-9883-60da8c056f0d&style=-1'
+script type='text/javascript' charset='utf-8' src='http://static.bshare.cn/b/bshareC2.js'
+
 - if login?
   - if @topic.liked_by?(current_user)
     javascript:
@@ -137,5 +140,3 @@
       }
     });
 
-  script type='text/javascript' charset='utf-8' src='http://static.bshare.cn/b/buttonLite.js#uuid=b2b1739e-7807-4b34-9883-60da8c056f0d&style=-1'
-  script type='text/javascript' charset='utf-8' src='http://static.bshare.cn/b/bshareC2.js'
