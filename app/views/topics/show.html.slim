@@ -30,11 +30,15 @@
                       = markdown_format @topic.body
                     .list-group-item-actions.clearfix
                       .pull-left
-                        .bshare-custom
-                          a.bshare-weixin
-                          a.bshare-sinaminiblog
-                          a.bshare-douban
-                          a.bshare-twitter
+                        /! JiaThis Button BEGIN
+                        .jiathis_style_24x24
+                          a.jiathis_button_tsina
+                          a.jiathis_button_weixin
+                          a.jiathis_button_douban
+                          a.jiathis_button_tqq
+                          a href="http://www.jiathis.com/share?uid=1938659" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"
+
+                        /!-- JiaThis Button END 
                       .pull-right
                         a.btn id="like-for-topic-#{@topic.id}" href=topic_like_path(@topic) data-remote="true" data-method="post"
                           i.fa.fa-heart
@@ -115,9 +119,14 @@
                 - else
                   .list-group-item.text-center.text-muted
                     = t '.no_more_topics'
-
-script type='text/javascript' charset='utf-8' src='http://static.bshare.cn/b/buttonLite.js#uuid=b2b1739e-7807-4b34-9883-60da8c056f0d&style=-1'
-script type='text/javascript' charset='utf-8' src='http://static.bshare.cn/b/bshareC2.js'
+javascript:
+  var jiathis_config={
+    data_track_clickback:true,
+      summary:"",
+        shortUrl:false,
+          hideMore:false
+          }
+script type='text/javascript' src="http://v3.jiathis.com/code/jia.js?uid=1938659" charset="utf-8"
 
 - if login?
   - if @topic.liked_by?(current_user)
