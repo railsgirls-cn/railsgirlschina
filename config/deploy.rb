@@ -18,8 +18,7 @@ set :shared_paths, %w(config/database.yml config/config.yml config/secrets.yml b
 # This task is the environment that is loaded for most commands, such as
 # `mina deploy` or `mina rake`.
 task :environment do
-  queue! %[source /usr/local/rvm/scripts/rvm]
-  queue! %[rvm use 2.0.0]
+  invoke 'rvm:use[2.0.0]'
 end
 
 # Put any custom mkdir's in here for when `mina setup` is ran.
